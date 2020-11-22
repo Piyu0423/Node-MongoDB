@@ -17,7 +17,7 @@ MongoClient.connect(url,(err,client)=>{
               console.log('updated document:\n', result.result); 
               dboper.findDocuments(db,'dishes',(docs)=>{
                 console.log('found documents:\n', docs);
-                dboper.dropCollection('dishes',(result)=>{
+                db.dropCollection('dishes',(result)=>{
                     console.log('dropped collection :', result);
                      client.close();
                 });
